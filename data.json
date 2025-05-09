@@ -1,0 +1,42 @@
+[
+    {
+        "texto": "Comprar: Alface, cebolinha e brócolis",
+        "data": null,
+        "prioridade": 0
+    },
+    {
+        "texto": "Pagar contas: Água, luz e telefone",
+        "data": "2024-08-10",
+        "prioridade": 2
+    },
+    {
+        "texto": "AAAAAAAA. Conteúdo: Memória primária",
+        "data": "2024-08-20",
+        "prioridade": 2
+    },
+    {
+        "texto": "Seminário de PW",
+        "data": "2024-09-04",
+        "prioridade": 1
+    },
+    {
+        "texto": "Continuar leitura. Página 121",
+        "data": null,
+        "prioridade": 3
+    },
+    {
+        "texto": "Ligar para Vó",
+        "data": null,
+        "prioridade": 2
+    },
+    {
+        "texto": "Comprar presente do José",
+        "data": null,
+        "prioridade": 3
+    },
+    {
+        "texto": "Aniversário do José",
+        "data": "2024-08-17",
+        "prioridade": 0
+    }
+]

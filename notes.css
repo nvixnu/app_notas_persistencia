@@ -1,0 +1,330 @@
+html{
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    height: 60px;
+}
+
+header h1{
+    margin: 0;
+}
+
+header nav{
+    display: flex;
+}
+
+header nav button {
+    width: 28px;
+    height: 28px;
+    margin: 2px;
+}
+
+footer{
+    background-color: #ccc;
+    padding: 8px;
+    text-align: right;
+}
+
+button{
+    cursor: pointer;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+#msg-lista-vazia{
+    padding: 16px;
+    text-align: center;
+}
+
+#main-container > aside{
+    display: none;
+}
+
+ul#cards > li{
+    background-color: rgb(227, 227, 227);
+    padding: 8px;
+    margin: 4px;
+    display: flex;
+}
+
+ul#cards > li.prioridade-1{
+    background-color: rgb(154, 244, 144);
+}
+
+ul#cards > li.prioridade-2{
+    background-color: rgb(244, 232, 144);
+}
+
+ul#cards > li.prioridade-3{
+    background-color: rgb(244, 154, 144);
+}
+
+ul#cards > li.prioridade-3 {
+  animation: blinker .5s linear infinite;
+}
+
+  
+@keyframes blinker {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+ul#cards > li.prioridade-1 input[type="range"]{
+    accent-color: rgb(8, 81, 0);
+}
+
+ul#cards > li.prioridade-2  input[type="range"]{
+    accent-color: rgb(131, 72, 0);
+}
+
+ul#cards > li.prioridade-3  input[type="range"]{
+    accent-color: rgb(141, 16, 2);
+}
+
+ul#cards > li.card-aberto{
+    background-color: #ccc;
+}
+
+ul#cards > li > input[type="date"]{
+    background-color:transparent;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 4px;
+}
+
+ul#cards > li > label{
+    font-size: 10pt;
+}
+
+ul#cards.lista > li > label > input[type="range"]{
+    display: block
+}
+
+ul#cards > li > textarea{
+    flex: 2;
+    background-color:transparent;
+    border: 1px solid #ccc;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+ul#cards.grade-grande > li, 
+ul#cards.grade-pequena > li{
+    flex-direction: column;
+}
+
+ul#cards.grade-grande > li > textarea, 
+ul#cards.grade-pequena > li > textarea{
+    margin: 4px 0 4px 0;
+}
+
+ul#cards.grade-grande, 
+ul#cards.grade-pequena{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+ul#cards.grade-grande > li{
+    width: calc(50% - 24px);
+    height: 200px;
+}
+
+ul#cards.grade-pequena > li{
+    width: calc(33% - 24px);
+    height: 100px;
+}
+
+
+#main-container aside > span{
+    font-weight: bold;
+}
+
+#main-container aside > ul > li{
+    padding: 8px;
+}
+
+#main-container{
+    display: flex;  
+    min-height: calc(100vh - 111px); 
+    flex-direction: column;
+}
+
+#main-container main{
+    flex: 2
+}
+
+
+#modal.on{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 16px;
+    display: block;
+    z-index: 2;
+
+}
+
+#modal.on + #overlay{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #00000057;
+}
+
+#modal.off{
+    display: none;
+}
+
+#modal > section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#modal > section > div:nth-child(2){
+    flex: 2;
+}
+
+#modal > section > header{
+    font-size: 2rem;
+}
+
+#modal form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+}
+
+#modal form > div{
+    margin: 8px;
+}
+
+#modal form > div > input[type="text"],
+#modal form > div > input[type="password"]{
+    width: 100%;
+}
+
+#modal form span.dica{
+    font-size: 0.6rem;
+}
+
+
+/* dispositivos muito pequenos (celulares, abaixo de 600px) */
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 2rem;
+    }
+
+    header{
+        background-color: rgb(255, 154, 242);
+    }
+
+    header > nav *, ul#cards li, #modal *{
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Dispositivos pequenos(celulares grandes e tablets em modo retato, acima de 600px) */
+@media only screen and (min-width: 600px) {
+    header{
+        background-color: rgb(216, 255, 154);
+    }
+
+    header > nav *, ul#cards li, #modal *{
+        font-size: 1.5rem;
+    }
+    
+}
+
+/* Dispositivos médios (tablets em modo paisagem, acima de 768px) */
+@media only screen and (min-width: 768px) {
+    #menu-cabecalho-tela-pequena{
+        display: none;
+    }
+
+    header{
+        background-color: rgb(154, 255, 247);
+    }
+
+    header > nav *, ul#cards li, #modal *, footer{
+        font-size: 1rem;
+    }
+
+
+    #main-container{
+        display: flex;  
+        justify-content:right; 
+        min-height: calc(100vh - 60px - 48px); 
+        flex-direction: row;
+    }
+    
+    #main-container main{
+        flex: 2
+    }
+
+    #main-container > aside{
+        display: block;
+    }
+    
+    #main-container aside{
+        background-color: #e0fffd;
+        padding: 8px;
+    }
+
+    ul#cards.grade-grande > li{
+        width: calc(33% - 24px);
+        height: 180px;
+    }
+    
+    ul#cards.grade-pequena > li{
+        width: 150px;
+        height: 150px;
+    }
+
+    #modal.on{
+        height: 300px;
+        width: 300px;
+        top: calc(50% - 150px);
+        left: calc(50% - 150px);
+        border-radius: 16px;
+        box-shadow: 4px 4px 16px rgb(117, 117, 117);
+    }
+    
+}
+
+/* Dispositivos grandes (notebooks e computadores, acima de 992px) */
+@media only screen and (min-width: 992px) {
+    
+}
+
+/* Dispositivos muito grandes (notebooks e computadores com tela grande, acima de 1200px) */
+@media only screen and (min-width: 1200px) {
+    
+}
